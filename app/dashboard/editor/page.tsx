@@ -441,8 +441,9 @@ export default function Editor() {
       if (res.ok) {
         setIsPublished(true);
         const seller = JSON.parse(localStorage.getItem('seller') || '{}');
+        const baseUrl = window.location.origin;
         alert(
-          `Your store is live! Visit: https://easyvendor.com/stores/${seller.subdomain}`
+          `Your store is live! Visit: ${baseUrl}/stores/${seller.subdomain}`
         );
       }
     } catch (error) {

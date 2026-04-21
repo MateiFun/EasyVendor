@@ -15,6 +15,8 @@ export default function SellerSignup() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const baseUrl =
+    typeof window !== 'undefined' ? window.location.origin : 'https://easy-vendor.vercel.app';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -82,7 +84,7 @@ export default function SellerSignup() {
           <div className={styles.formGroup}>
             <label htmlFor="subdomain">Store URL</label>
             <div className={styles.subdomainInput}>
-              <span>easyvendor.com/stores/</span>
+              <span>{baseUrl}/stores/</span>
               <input
                 type="text"
                 id="subdomain"
